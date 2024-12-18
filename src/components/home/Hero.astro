@@ -9,7 +9,10 @@ const { name, title, department } = Astro.props;
 ---
 
 <div class="hero">
-  <div class="hero-content">
+  <div class="hero-content hero-reversed">
+    <div class="hero-image">
+      <img src="/servletrecuperafoto.jpg" alt={name}>
+    </div>
     <div class="hero-text">
       <h1>{name}</h1>
       <p class="title">{title}</p>
@@ -18,9 +21,6 @@ const { name, title, department } = Astro.props;
         <a href="/research" class="button primary">Projetos de Pesquisa</a>
         <a href="/contact" class="button secondary">Informações Pessoais</a>
       </div>
-    </div>
-    <div class="hero-image">
-      <img src="/servletrecuperafoto.jpg" alt={name}>
     </div>
   </div>
 </div>
@@ -39,6 +39,9 @@ const { name, title, department } = Astro.props;
     grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     align-items: center;
+  }
+  .hero-reversed {
+    grid-template-columns: 1fr 1.5fr;
   }
   .hero-text h1 {
     font-size: 2.3rem;
