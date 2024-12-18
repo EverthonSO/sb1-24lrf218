@@ -15,8 +15,8 @@ const { name, title, department } = Astro.props;
       <p class="title">{title}</p>
       <p class="department">{department}</p>
       <div class="hero-buttons">
-        <a href="/research" class="button primary">Research Projects</a>
-        <a href="/contact" class="button secondary">Contact Me</a>
+        <a href="/research" class="button primary">Projetos de Pesquisa</a>
+        <a href="/contact" class="button secondary">Fale Comigo</a>
       </div>
     </div>
     <div class="hero-image">
@@ -82,7 +82,7 @@ const { name, title, department } = Astro.props;
   }
   .hero-image img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px; /* Reduzindo o tamanho da imagem */
     border-radius: 1rem;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
                 0 10px 10px -5px rgba(0, 0, 0, 0.04);
