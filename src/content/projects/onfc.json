@@ -1,0 +1,11 @@
+{
+  "title": "Online Neuro-Fuzzy Controller (ONFC)",
+  "description": "Desenvolvimento de controladores neuro-fuzzy com garantias de estabilidade robusta, aplicando técnicas avançadas de controle adaptativo e aprendizado online.",
+  "status": "Em andamento",
+  "aspects": [
+    "Desenvolvimento de algoritmos de aprendizado online",
+    "Análise de estabilidade robusta",
+    "Implementação em sistemas reais"
+  ],
+  "featured": true
+}

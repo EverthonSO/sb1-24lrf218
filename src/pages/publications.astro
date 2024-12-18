@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Publications - Professor Name">
+	<h1>Publications</h1>
+
+	<section class="card">
+		<h2>Journal Articles</h2>
+		<div class="publications-list">
+			<article class="publication-item">
+				<h3>Publication Title 1</h3>
+				<p class="authors">Author 1, Author 2, Author 3</p>
+				<p class="journal">Journal Name (2024)</p>
+				<p class="details">Vol. X, Issue Y, Pages Z</p>
+				<div class="publication-links">
+					<a href="#" class="button">PDF</a>
+					<a href="#" class="button">DOI</a>
+					<a href="#" class="button">Citation</a>
+				</div>
+			</article>
+
+			<article class="publication-item">
+				<h3>Publication Title 2</h3>
+				<p class="authors">Author 1, Author 2</p>
+				<p class="journal">Journal Name (2023)</p>
+				<p class="details">Vol. X, Issue Y, Pages Z</p>
+				<div class="publication-links">
+					<a href="#" class="button">PDF</a>
+					<a href="#" class="button">DOI</a>
+					<a href="#" class="button">Citation</a>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="card">
+		<h2>Conference Proceedings</h2>
+		<div class="publications-list">
+			<article class="publication-item">
+				<h3>Conference Paper Title 1</h3>
+				<p class="authors">Author 1, Author 2</p>
+				<p class="conference">Conference Name (2024)</p>
+				<p class="details">Location, Date</p>
+				<div class="publication-links">
+					<a href="#" class="button">PDF</a>
+					<a href="#" class="button">Slides</a>
+					<a href="#" class="button">Citation</a>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="card">
+		<h2>Books and Book Chapters</h2>
+		<div class="publications-list">
+			<article class="publication-item">
+				<h3>Book Title</h3>
+				<p class="authors">Author 1, Author 2</p>
+				<p class="publisher">Publisher Name (2023)</p>
+				<p class="details">ISBN: XXX-X-XXXX-XXXX-X</p>
+				<div class="publication-links">
+					<a href="#" class="button">Publisher Link</a>
+					<a href="#" class="button">Citation</a>
+				</div>
+			</article>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.publications-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.publication-item {
+		border-bottom: 1px solid #eee;
+		padding-bottom: 1.5rem;
+	}
+	.publication-item:last-child {
+		border-bottom: none;
+	}
+	.publication-item h3 {
+		margin: 0 0 0.5rem 0;
+	}
+	.authors {
+		color: var(--secondary-color);
+		margin: 0.25rem 0;
+	}
+	.journal, .conference, .publisher {
+		font-style: italic;
+		margin: 0.25rem 0;
+	}
+	.details {
+		color: var(--secondary-color);
+		font-size: 0.9rem;
+		margin: 0.25rem 0;
+	}
+	.publication-links {
+		margin-top: 1rem;
+		display: flex;
+		gap: 1rem;
+	}
+	.button {
+		background: var(--accent-color);
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		font-size: 0.9rem;
+		transition: background-color 0.3s ease;
+	}
+	.button:hover {
+		background: var(--primary-color);
+	}
+</style>

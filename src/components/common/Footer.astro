@@ -1,0 +1,85 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/teaching">Teaching</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <ul>
+        <li>Email: professor@university.edu</li>
+        <li>Office: Building X, Room Y</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <div class="social-links">
+        <a href="#" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" aria-label="ORCID">
+          <i class="fab fa-orcid"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} Professor Name. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 3rem 0 1rem;
+  }
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .footer-section h3 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-section a:hover {
+    color: #3498db;
+  }
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+</style>

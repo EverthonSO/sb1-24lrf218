@@ -1,0 +1,100 @@
+---
+interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: string;
+  tags: string[];
+}
+
+const recentPublications: Publication[] = [
+  {
+    title: "Estimation of Reproduction Number for Covid-19 with Statistical Correction of Notifications Delay",
+    authors: "BARROS, G. P.; BARROS, R. P.; OLIVEIRA, E. S.; NEPOMUCENO, E. G.; PEREIRA, R. B. D.",
+    journal: "IEEE Latin America Transactions",
+    year: "2021",
+    tags: ["COVID-19", "Estatística", "Modelagem"]
+  },
+  {
+    title: "Online Neuro-Fuzzy Controller: Design for Robust Stability",
+    authors: "OLIVEIRA, E. S.; TAKAHASHI, R. H. C.; CAMINHAS, W. M.",
+    journal: "IEEE Access",
+    year: "2020",
+    tags: ["Neuro-Fuzzy", "Controle", "Estabilidade"]
+  },
+  {
+    title: "A Novel Analog Multisensor Design Based on Fuzzy Logic: A Magnetic Encoder Application",
+    authors: "MONTANARI, A. N.; OLIVEIRA, E. S.",
+    journal: "IEEE Sensors Journal",
+    year: "2017",
+    tags: ["Sensores", "Lógica Fuzzy"]
+  }
+];
+---
+
+<section class="card">
+  <h2>Publicações Recentes</h2>
+  <div class="publications-list">
+    {recentPublications.map(pub => (
+      <article class="publication-item">
+        <h3>{pub.title}</h3>
+        <p class="authors">{pub.authors}</p>
+        <p class="journal">{pub.journal}, {pub.year}</p>
+        <div class="tags">
+          {pub.tags.map(tag => (
+            <span>{tag}</span>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+  <a href="/publications" class="view-all">Ver todas as publicações →</a>
+</section>
+
+<style>
+  .publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+  .publication-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .publication-item:last-child {
+    border-bottom: none;
+  }
+  .authors {
+    color: var(--secondary);
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+  .journal {
+    font-style: italic;
+    margin: 0.25rem 0;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tags span {
+    background: #e2e8f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+  }
+  .view-all {
+    display: block;
+    margin-top: 1rem;
+    text-align: right;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .view-all:hover {
+    text-decoration: underline;
+  }
+</style>

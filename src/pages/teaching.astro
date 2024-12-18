@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Teaching - Professor Name">
+	<h1>Teaching</h1>
+	
+	<section class="card">
+		<h2>Current Courses</h2>
+		<div class="course-grid">
+			<div class="course-card">
+				<h3>Course Title 1</h3>
+				<p class="course-code">CODE101 - Spring 2024</p>
+				<p>Brief description of the course content and objectives.</p>
+				<div class="course-resources">
+					<h4>Course Materials</h4>
+					<ul>
+						<li><a href="#">Syllabus</a></li>
+						<li><a href="#">Lecture Notes</a></li>
+						<li><a href="#">Assignments</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="course-card">
+				<h3>Course Title 2</h3>
+				<p class="course-code">CODE202 - Spring 2024</p>
+				<p>Brief description of the course content and objectives.</p>
+				<div class="course-resources">
+					<h4>Course Materials</h4>
+					<ul>
+						<li><a href="#">Syllabus</a></li>
+						<li><a href="#">Lecture Notes</a></li>
+						<li><a href="#">Assignments</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="card">
+		<h2>Teaching Philosophy</h2>
+		<p>
+			Describe your approach to teaching, educational goals, and methods used to engage students
+			in the learning process. Discuss how you incorporate research into teaching and your
+			commitment to student success.
+		</p>
+	</section>
+
+	<section class="card">
+		<h2>Student Resources</h2>
+		<div class="resources-grid">
+			<div class="resource-item">
+				<h3>Office Hours</h3>
+				<p>Monday: 2:00 PM - 4:00 PM</p>
+				<p>Wednesday: 10:00 AM - 12:00 PM</p>
+				<p>Location: Building Name, Room 123</p>
+			</div>
+			<div class="resource-item">
+				<h3>Additional Resources</h3>
+				<ul>
+					<li><a href="#">Department Resources</a></li>
+					<li><a href="#">Academic Support Services</a></li>
+					<li><a href="#">Research Guides</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.course-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1rem;
+	}
+	.course-card {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 6px;
+	}
+	.course-code {
+		color: var(--secondary-color);
+		font-style: italic;
+	}
+	.course-resources ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	.course-resources a {
+		color: var(--accent-color);
+		text-decoration: none;
+	}
+	.course-resources a:hover {
+		text-decoration: underline;
+	}
+	.resources-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+	.resource-item ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	.resource-item a {
+		color: var(--accent-color);
+		text-decoration: none;
+	}
+	.resource-item a:hover {
+		text-decoration: underline;
+	}
+</style>

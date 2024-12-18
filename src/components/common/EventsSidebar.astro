@@ -1,0 +1,88 @@
+---
+interface Event {
+  title: string;
+  date: string;
+  type: 'conference' | 'seminar' | 'deadline';
+  description: string;
+}
+
+const upcomingEvents: Event[] = [
+  {
+    title: "XXV Congresso Brasileiro de Automática",
+    date: "2024",
+    type: "conference",
+    description: "Apresentação de trabalho sobre controle de quadrotors"
+  },
+  {
+    title: "Seminário de Pesquisa em Controle Inteligente",
+    date: "Próximo semestre",
+    type: "seminar",
+    description: "Apresentação dos resultados recentes em ONFC"
+  }
+];
+---
+
+<aside class="events-sidebar">
+  <h2>Eventos</h2>
+  <div class="events-list">
+    {upcomingEvents.map(event => (
+      <article class={`event-card ${event.type}`}>
+        <div class="event-icon">
+          {event.type === 'conference' && <i class="fas fa-users"></i>}
+          {event.type === 'seminar' && <i class="fas fa-chalkboard-teacher"></i>}
+          {event.type === 'deadline' && <i class="fas fa-calendar-check"></i>}
+        </div>
+        <div class="event-content">
+          <h3>{event.title}</h3>
+          <p class="event-date">{event.date}</p>
+          <p class="event-description">{event.description}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</aside>
+
+<style>
+  .events-sidebar {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .event-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+  }
+  .event-card:hover {
+    transform: translateY(-2px);
+  }
+  .event-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  .event-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .event-date {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+  }
+  .event-description {
+    font-size: 0.875rem;
+  }
+  .conference { border-left: 4px solid #3498db; }
+  .seminar { border-left: 4px solid #2ecc71; }
+  .deadline { border-left: 4px solid #e74c3c; }
+</style>

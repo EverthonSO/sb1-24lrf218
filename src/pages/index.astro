@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/home/Hero.astro';
+import ProjectsPreview from '../components/home/ProjectsPreview.astro';
+import PublicationsPreview from '../components/home/PublicationsPreview.astro';
+import EventsSidebar from '../components/common/EventsSidebar.astro';
+---
+
+<Layout title="Prof. Everthon Oliveira - CEFET-MG">
+  <Hero
+    name="Prof. Everthon de Souza Oliveira"
+    title="Professor do Departamento de Engenharia Elétrica"
+    department="CEFET-MG • Belo Horizonte"
+  />
+  
+  <div class="container">
+    <div class="main-content">
+      <div class="content-grid">
+        <ProjectsPreview />
+        <PublicationsPreview />
+      </div>
+      <aside class="sidebar">
+        <EventsSidebar />
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .main-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  .content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  @media (max-width: 1024px) {
+    .main-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

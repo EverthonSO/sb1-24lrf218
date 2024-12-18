@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const events = await getCollection('events');
+events.sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+
+<Layout title="Eventos - Prof. Everthon Oliveira">
+  <div class="container">
+    <h1>Eventos</h1>
+    
+    <section class="events-grid">
+      {events.map(event => (
+        <article class={`event-card ${event.data.type}`}>
+          <div class="event-icon">
+            {event.data.type === 'conference' && <i class="fas fa-users"></i>}
+            {event.data.type === 'seminar' && <i class="fas fa-chalkboard-teacher"></i>}
+            {event.data.type === 'deadline' && <i class="fas fa-calendar-check"></i>}
+          </div>
+          <div class="event-content">
+            <h3>{event.data.title}</h3>
+            <p class="event-date">{event.data.date}</p>
+            <p class="event-description">{event.data.description}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .events-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .event-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .event-card:hover {
+    transform: translateY(-2px);
+  }
+  .event-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  .event-content h3 {
+    margin-bottom: 0.5rem;
+  }
+  .event-date {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+  }
+  .conference { border-left: 4px solid #3498db; }
+  .seminar { border-left: 4px solid #2ecc71; }
+  .deadline { border-left: 4px solid #e74c3c; }
+</style>

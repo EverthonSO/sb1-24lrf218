@@ -1,0 +1,94 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  status: string;
+  aspects: string[];
+}
+
+const projects: Project[] = [
+  {
+    title: "Online Neuro-Fuzzy Controller (ONFC)",
+    description: "Desenvolvimento de controladores neuro-fuzzy com garantias de estabilidade robusta, aplicando técnicas avançadas de controle adaptativo e aprendizado online.",
+    status: "Em andamento",
+    aspects: [
+      "Desenvolvimento de algoritmos de aprendizado online",
+      "Análise de estabilidade robusta",
+      "Implementação em sistemas reais"
+    ]
+  },
+  {
+    title: "Instrumentação Inteligente",
+    description: "Pesquisa em sensores e sistemas de instrumentação baseados em lógica fuzzy, com aplicações em sistemas industriais e de controle.",
+    status: "Em andamento",
+    aspects: [
+      "Desenvolvimento de sensores inteligentes",
+      "Fusão de dados multissensor",
+      "Aplicações em sistemas de controle"
+    ]
+  }
+];
+---
+
+<section class="card">
+  <h2>Projetos em Andamento</h2>
+  <div class="projects-grid">
+    {projects.map(project => (
+      <article class="project-card">
+        <h3>{project.title}</h3>
+        <p class="project-status">Status: {project.status}</p>
+        <p>{project.description}</p>
+        <div class="project-details">
+          <h4>Aspectos Principais:</h4>
+          <ul>
+            {project.aspects.map(aspect => (
+              <li>{aspect}</li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+  <a href="/projects" class="view-all">Ver todos os projetos →</a>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+  .project-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-2px);
+  }
+  .project-status {
+    color: var(--primary);
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+  .project-details h4 {
+    margin: 1rem 0 0.5rem 0;
+    color: var(--secondary);
+  }
+  .project-details ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .view-all {
+    display: block;
+    margin-top: 1rem;
+    text-align: right;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .view-all:hover {
+    text-decoration: underline;
+  }
+</style>
