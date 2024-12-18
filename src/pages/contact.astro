@@ -33,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 
 		<section class="card social-links">
-			<h2>Professional Profiles</h2>
+			<h2>Redes Sociais</h2>
 			<div class="social-grid">
 				<a href="http://lattes.cnpq.br/5508538577119686" class="social-item" target="_blank">
 					<img src="/lattes-icon.svg" alt="Lattes iD">
@@ -58,8 +58,13 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 	</div>
-</Layout>
 
+	<section class="card short-bio">
+		<h2>Short Bio</h2>
+		<p>
+			Possui Graduação em Engenharia Elétrica pela Universidade Federal de São João Del-Rei (2009), Mestrado em Engenharia Elétrica pela UFMG (2012) e Doutorado em Engenharia Elétrica também pela UFMG (2021). Atualmente é professor do Departamento de Engenharia Elétrica do Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG). Tem experiência na área de Modelagem e Controle de Sistemas Dinâmicos Não-Lineares e Sistemas Nebulosos. Tem interesse nos seguintes temas: Controle e Modelagem por Lógica Fuzzy, Controle Adaptativo, Inteligência Artificial e Instrumentação Inteligente.
+		</p>
+	</section>
 
 	<section class="card">
 		<h2>For Students</h2>
@@ -132,5 +137,10 @@ import Layout from '../layouts/Layout.astro';
 		width: 32px;
 		height: 32px;
 		margin-bottom: 0.5rem;
+	}
+	.short-bio p {
+		font-size: 1rem;
+		line-height: 1.6;
+		color: var(--text-color);
 	}
 </style>
