@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
-// https://astro.build/config
 
 export default defineConfig({
-  site: 'https://everthonso.github.io/',
-  base: '/everthonso.github.io/', // Nome do seu repositório no GitHub Pages
+  site: 'https://seu-usuario.github.io/', // Substitua pelo seu usuário do GitHub
+  base: '/nome-do-repositorio/',          // Caminho base do seu repositório
+  outDir: 'dist',                         // Pasta de saída após o build
 });
